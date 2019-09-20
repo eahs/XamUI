@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AiForms.Effects" Version="1.5.5" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FontFileResources.xaml.cs">
+      <DependentUpon>FontFileResources.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Login\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Login\ResetPasswordPage.xaml.cs">
+      <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="FontFileResources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Login\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Article\" />
+    <Folder Include="Views\Messages\" />
+    <Folder Include="Views\Error\" />
+    <Folder Include="Views\Ecommerce\" />
+    <Folder Include="Views\Forms\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Social\" />
+    <Folder Include="Views\Onboarding\" />
+  </ItemGroup>
+</Project>
