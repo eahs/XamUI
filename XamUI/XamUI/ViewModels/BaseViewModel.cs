@@ -12,6 +12,7 @@ namespace XamUI.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        // This DataStore is from the built-in Shell Template for VS
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
         bool isBusy = false;

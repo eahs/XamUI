@@ -9,7 +9,7 @@ namespace XamUI.ViewModels.Login
     /// ViewModel for reset password page.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class ResetPasswordViewModel : INotifyPropertyChanged
+    public class ResetPasswordViewModel : BaseViewModel
     {
         #region Fields
 
@@ -32,14 +32,6 @@ namespace XamUI.ViewModels.Login
 
         #endregion
 
-        #region Event
-
-        /// <summary>
-        /// The declaration of the property changed event.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion
 
         #region Command
 
@@ -104,15 +96,6 @@ namespace XamUI.ViewModels.Login
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// The PropertyChanged event occurs when changing the value of property.
-        /// </summary>
-        /// <param name="propertyName">Property name</param>
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Invoked when the Submit button is clicked.

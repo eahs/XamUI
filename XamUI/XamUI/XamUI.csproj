@@ -19,8 +19,14 @@
     <Compile Update="FontFileResources.xaml.cs">
       <DependentUpon>FontFileResources.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\About\AboutShrinkHeaderPage.xaml.cs">
+      <DependentUpon>AboutShrinkHeaderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Login\ForgotPasswordPage.xaml.cs">
       <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Login\SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Login\ResetPasswordPage.xaml.cs">
       <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
@@ -29,6 +35,12 @@
 
   <ItemGroup>
     <EmbeddedResource Update="FontFileResources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\LightTheme.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\About\AboutShrinkHeaderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Login\LoginPage.xaml">
@@ -42,7 +54,6 @@
     <Folder Include="Views\Error\" />
     <Folder Include="Views\Ecommerce\" />
     <Folder Include="Views\Forms\" />
-    <Folder Include="Views\About\" />
     <Folder Include="Views\Social\" />
     <Folder Include="Views\Onboarding\" />
   </ItemGroup>

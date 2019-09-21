@@ -3,6 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:font="clr-namespace:FontResources"
        mc:Ignorable="d"
        xmlns:local="clr-namespace:XamUI.Views"
        Title="XamUI"
@@ -11,7 +12,9 @@
 
     <!-- 
         Styles and Resources 
+        This should probably be moved to Themes
     -->
+    
     <Shell.Resources>
         <ResourceDictionary>
             <Color x:Key="NavigationPrimary">#2196F3</Color>
@@ -29,7 +32,8 @@
             <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-
+    
+    
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Black"
@@ -49,13 +53,44 @@
 
     <FlyoutItem Title="Login Pages"
                 Icon="tab_login.png">
-        <Tab Title="Login" Icon="tab_about.png">
+        <Tab Title="Login">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.User }"
+                    Size="50"
+                    />
+            </Tab.Icon>            
             <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
         </Tab>
-        <Tab Title="Forgot Password" Icon="tab_about.png">
+        <Tab Title="Signup">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.PlusCircle }"
+                    Size="50"
+                    />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:SignupPage}" />
+        </Tab>
+        <Tab Title="Forgot">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.QuestionCircle }"
+                    Size="50"
+                    />
+            </Tab.Icon>            
             <ShellContent ContentTemplate="{DataTemplate local:ForgotPasswordPage}" />
         </Tab>
-        <Tab Title="Reset Password" Icon="tab_about.png">
+        <Tab Title="Reset">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.Refresh }"
+                    Size="50"
+                    />
+            </Tab.Icon>            
             <ShellContent ContentTemplate="{DataTemplate local:ResetPasswordPage}" />
         </Tab>
     </FlyoutItem>
@@ -89,9 +124,16 @@
     </FlyoutItem>
     <FlyoutItem Title="About Pages"
                 Icon="tab_about.png">
-        <Tab Title="Browse22" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
-        </Tab>        
+        <Tab Title="Shrinking Header">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.SortAmountDesc }"
+                    Size="50"
+                    />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:AboutShrinkHeaderPage}" />
+        </Tab>
         <Tab Title="About" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>

@@ -77,6 +77,10 @@
     <AndroidAsset Include="Assets\fonts\Font Awesome 5 Brands-Regular-400.otf" />
     <AndroidAsset Include="Assets\fonts\Font Awesome 5 Free-Regular-400.otf" />
     <AndroidAsset Include="Assets\fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <AndroidAsset Include="Assets\fonts\Montserrat-Bold.ttf" />
+    <AndroidAsset Include="Assets\fonts\Montserrat-Medium.ttf" />
+    <AndroidAsset Include="Assets\fonts\Montserrat-Regular.ttf" />
+    <AndroidAsset Include="Assets\fonts\Montserrat-SemiBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

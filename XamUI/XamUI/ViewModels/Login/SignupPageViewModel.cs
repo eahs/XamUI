@@ -1,39 +1,63 @@
-﻿using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace XamUI.ViewModels.Login
 {
     /// <summary>
-    /// ViewModel for login page.
+    /// ViewModel for sign-up page.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class LoginPageViewModel : LoginViewModel
+    public class SignupPageViewModel : LoginViewModel
     {
         #region Fields
 
+        private string name;
+
         private string password;
+
+        private string confirmPassword;
 
         #endregion
 
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance for the <see cref="LoginPageViewModel" /> class.
+        /// Initializes a new instance for the <see cref="SignUpPageViewModel" /> class.
         /// </summary>
-        public LoginPageViewModel()
+        public SignupPageViewModel()
         {
             this.LoginCommand = new Command(this.LoginClicked);
             this.SignUpCommand = new Command(this.SignUpClicked);
-            this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
         }
 
         #endregion
 
-        #region property
+        #region Property
 
         /// <summary>
-        /// Gets or sets the property that is bound with an entry that gets the password from user in the login page.
+        /// Gets or sets the property that bounds with an entry that gets the name from user in the Sign Up page.
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
+                if (this.name == value)
+                {
+                    return;
+                }
+
+                this.name = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the password from users in the Sign Up page.
         /// </summary>
         public string Password
         {
@@ -54,9 +78,29 @@ namespace XamUI.ViewModels.Login
             }
         }
 
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the password confirmation from users in the Sign Up page.
+        /// </summary>
+        public string ConfirmPassword
+        {
+            get
+            {
+                return this.confirmPassword;
+            }
+
+            set
+            {
+                if (this.confirmPassword == value)
+                {
+                    return;
+                }
+
+                this.confirmPassword = value;
+                this.OnPropertyChanged();
+            }
+        }
+
         #endregion
-
-
 
         #region Command
 
@@ -70,31 +114,17 @@ namespace XamUI.ViewModels.Login
         /// </summary>
         public Command SignUpCommand { get; set; }
 
-        /// <summary>
-        /// Gets or sets the command that is executed when the Forgot Password button is clicked.
-        /// </summary>
-        public Command ForgotPasswordCommand { get; set; }
-
-
         #endregion
 
-        #region methods
+        #region Methods
 
         /// <summary>
-        /// Invoked when the Log In button is clicked.
+        /// Invoked when the Log in button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
         private void LoginClicked(object obj)
         {
-            var button = obj as Frame;
-
-            var animation = new Animation
-            {
-                { 0, 0.5, new Animation ( v => button.Scale = v, 1, 1.2, Easing.CubicIn) },
-                { 0.5, 1.0, new Animation ( v => button.Scale = v, 1.2, 1, Easing.CubicOut) }
-            };
-
-            animation.Commit(button, "Bounce");
+            // Do something
         }
 
         /// <summary>
@@ -103,22 +133,8 @@ namespace XamUI.ViewModels.Login
         /// <param name="obj">The Object</param>
         private void SignUpClicked(object obj)
         {
-
+            // Do something
         }
-
-        /// <summary>
-        /// Invoked when the Forgot Password button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
-        private async void ForgotPasswordClicked(object obj)
-        {
-            var label = obj as Label;
-            label.BackgroundColor = Color.FromHex("#70FFFFFF");
-            await Task.Delay(100);
-            label.BackgroundColor = Color.Transparent;
-        }
-
-
 
         #endregion
     }
