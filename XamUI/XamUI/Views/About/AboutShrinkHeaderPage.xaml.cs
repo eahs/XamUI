@@ -12,7 +12,7 @@ namespace XamUI.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutShrinkHeaderPage : ContentPage
     {
-        public int HeaderHeight { get; set; } = 100;
+        public Xamarin.Forms.Rectangle HeaderBounds { get; } = new Rectangle(0, 0, 1, 100);
 
         public AboutShrinkHeaderPage()
         {
@@ -24,9 +24,8 @@ namespace XamUI.Views
 
         private void MainScrollView_Scrolled(object sender, ScrolledEventArgs e)
         {
-            double progress = Math.Min(e.ScrollY, HeaderHeight) / HeaderHeight;
+            double progress = Math.Min(e.ScrollY, HeaderBounds.Height) / HeaderBounds.Height;
 
-            dbgLabel.Text = "" + e.ScrollY + " " + MainHeaderImage.Height;
             MainHeaderImage.Scale = 1 + progress;
             MainHeaderImage.Opacity = 1 - progress;
         }

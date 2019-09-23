@@ -6,27 +6,68 @@
              mc:Ignorable="d"
              x:Class="XamUI.Views.AboutShrinkHeaderPage">
     <ContentPage.Content>
-        <Grid>
+        <AbsoluteLayout>
 
-            <StackLayout BackgroundColor="Blue" HeightRequest="200">
-                
+            <Frame AbsoluteLayout.LayoutBounds="{Binding HeaderBounds}"
+                   AbsoluteLayout.LayoutFlags="WidthProportional"
+                   BackgroundColor="Blue">
+
                 <Image x:Name="MainHeaderImage"
                            Source="xamarin_logo.png"
                            Aspect="AspectFit"
-                             HeightRequest="64"
-                             Margin="0,5,0,5"/>
-
-            </StackLayout>
-
-            <ScrollView x:Name="MainScrollView">
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                             />
+                
+                
+            </Frame>
+            <ScrollView x:Name="MainScrollView"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All">
                 <StackLayout>
                     <BoxView BackgroundColor="Transparent" HeightRequest="100" HorizontalOptions="CenterAndExpand"/>
                     <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HeightRequest="1000">
-                        <Label x:Name="dbgLabel" Text="Hello world" HorizontalOptions="FillAndExpand"/>
                         
+                        <!--  Product version  -->
+                        <Label
+                        HorizontalOptions="CenterAndExpand" 
+                        Margin="0,8.7,0,0"
+                        Text="Version 1.0" />
+                                
+                        <!--  Product title  -->
+                        <Label
+                        FontFamily="{StaticResource BoldFont}"
+                        FontSize="Large"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="0,16,0,16"
+                        Text="Xamarin UI" />
+
+                        <!--  Product description  -->
+                        <Label
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        FontFamily="{StaticResource SemiBoldFont}"                            
+                        Margin="15,0,15,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Cupcake ipsum dolor. Sit amet dessert donut jelly-o liquorice powder. " />
+                                        <Span Text="Cookie icing marzipan marshmallow ice cream. Liquorice dragée toffee " />
+                                        <Span Text="apple pie lollipop pie caramels. Bonbon chocolate bar sugar plum " />
+                                        <Span Text="chocolate bar cotton candy cotton candy pie marzipan." />
+                                </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Image Source="happyoffice.jpg"
+                               Aspect="AspectFit"
+                               HorizontalOptions="CenterAndExpand"
+                               Margin="0, 15, 0, 15"/>
+
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-        </Grid>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
