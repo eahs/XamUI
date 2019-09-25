@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamUI.ViewModels.About;
 
 namespace XamUI.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutShrinkHeaderPage : ContentPage
     {
-        public Xamarin.Forms.Rectangle HeaderBounds { get; } = new Rectangle(0, 0, 1, 100);
+        private AboutPageViewModel viewModel;
 
         public AboutShrinkHeaderPage()
         {
             InitializeComponent();
 
-            this.BindingContext = this;
+            this.BindingContext = viewModel = new AboutPageViewModel();
             MainScrollView.Scrolled += MainScrollView_Scrolled;
         }
 
         private void MainScrollView_Scrolled(object sender, ScrolledEventArgs e)
         {
-            double progress = Math.Min(e.ScrollY, HeaderBounds.Height) / HeaderBounds.Height;
+            double progress = Math.Min(e.ScrollY, viewModel.HeaderBounds.Height) / viewModel.HeaderBounds.Height;
 
             MainHeaderImage.Scale = 1 + progress;
             MainHeaderImage.Opacity = 1 - progress;

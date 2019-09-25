@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:font="clr-namespace:FontResources"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"             
              mc:Ignorable="d"
              x:Class="XamUI.Views.SignupPage"
              BackgroundColor="#232b76">
@@ -11,34 +12,38 @@
     
     <ContentPage.Content>
         <Grid>
-            <Image Source="background1.jpg" Aspect="Fill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <!--<Image Source="background1.jpg" Aspect="Fill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
+            <yummy:PancakeView BackgroundGradientStartColor="#383561" 
+                               BackgroundGradientEndColor="#5e3e87" 
+                               BackgroundGradientAngle="45" 
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand">
 
-
-            <ScrollView HorizontalOptions="Center">
-                <ScrollView.VerticalOptions>
-                    <OnIdiom
+                <ScrollView HorizontalOptions="Center">
+                    <ScrollView.VerticalOptions>
+                        <OnIdiom
                         x:TypeArguments="LayoutOptions"
                         Default="CenterAndExpand"
                         Phone="FillAndExpand" />
-                </ScrollView.VerticalOptions>
-            
-                <StackLayout Margin="20" >
+                    </ScrollView.VerticalOptions>
 
-                    <Label Margin="0,20,0,0" FontFamily="{StaticResource SemiBoldFont}" Text="Signup" FontSize="Large" FontAttributes="Bold" TextColor="#eff7fc" HorizontalTextAlignment="Center"/>
-                    <Label FontFamily="{StaticResource MediumFont}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" HorizontalOptions="Center" TextColor="#c8cde7"/>
+                    <StackLayout Margin="20" >
 
-                    <Frame CornerRadius="16"  
+                        <Label Margin="0,20,0,0" FontFamily="{StaticResource SemiBoldFont}" Text="Signup" FontSize="Large" FontAttributes="Bold" TextColor="#eff7fc" HorizontalTextAlignment="Center"/>
+                        <Label FontFamily="{StaticResource MediumFont}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" HorizontalOptions="Center" TextColor="#c8cde7"/>
+
+                        <Frame CornerRadius="16"  
                            OutlineColor="#291a61" 
                            BackgroundColor="#4f4b88"
                            Padding="0"
                            Margin="0,25,0,0"
                            HorizontalOptions="FillAndExpand">
 
-                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal">
 
-                            <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.User }" FontSize="25" Margin="10,0,5,0" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.User }" FontSize="25" Margin="10,0,5,0" TextColor="White" VerticalOptions="CenterAndExpand"/>
 
-                            <Entry Text="" 
+                                <Entry Text="" 
                                    Placeholder="Name" 
                                    PlaceholderColor="#b3add5" 
                                    TextColor="#b3add5"
@@ -46,21 +51,21 @@
                                    Margin="0,0,25,0" 
                                    HorizontalOptions="FillAndExpand"/>
 
-                        </StackLayout>
-                    </Frame>
-                    
-                    <Frame CornerRadius="16"  
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame CornerRadius="16"  
                            OutlineColor="#291a61" 
                            BackgroundColor="#4f4b88"
                            Padding="0"
                            Margin="0,10,0,0"
                            HorizontalOptions="FillAndExpand">
 
-                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal">
 
-                            <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.Envelope }" FontSize="25" Margin="10,0,5,0" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.Envelope }" FontSize="25" Margin="10,0,5,0" TextColor="White" VerticalOptions="CenterAndExpand"/>
 
-                            <Entry Text="" 
+                                <Entry Text="" 
                                    Placeholder="Email" 
                                    PlaceholderColor="#b3add5" 
                                    TextColor="#b3add5"
@@ -68,21 +73,21 @@
                                    Margin="0,0,25,0" 
                                    HorizontalOptions="FillAndExpand"/>
 
-                        </StackLayout>
-                    </Frame>
+                            </StackLayout>
+                        </Frame>
 
-                    <Frame CornerRadius="16"  
+                        <Frame CornerRadius="16"  
                            OutlineColor="#291a61" 
                            BackgroundColor="#4f4b88"
                            Padding="0"
                            Margin="0,10,0,0"
                            HorizontalOptions="FillAndExpand">
 
-                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal">
 
-                            <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.Lock }" FontSize="25" Margin="10,0,5,0" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                                <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.Lock }" FontSize="25" Margin="10,0,5,0" VerticalOptions="CenterAndExpand" TextColor="White"/>
 
-                            <Entry Text="" 
+                                <Entry Text="" 
                                    Placeholder="Password" 
                                    PlaceholderColor="#b3add5" 
                                    TextColor="#b3add5"
@@ -90,22 +95,22 @@
                                    Margin="0,0,25,0" 
                                    HorizontalOptions="FillAndExpand"/>
 
-                        </StackLayout>
+                            </StackLayout>
 
-                    </Frame>
+                        </Frame>
 
-                    <Frame CornerRadius="16"  
+                        <Frame CornerRadius="16"  
                            OutlineColor="#291a61" 
                            BackgroundColor="#4f4b88"
                            Padding="0"
                            Margin="0,10,0,0"
                            HorizontalOptions="FillAndExpand">
 
-                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal">
 
-                            <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.Lock }" FontSize="25" Margin="10,0,5,0" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                                <Label FontFamily="{x:Static font:FontFileResources.LineAwesome}" Text="{x:Static font:LineAwesome.Lock }" FontSize="25" Margin="10,0,5,0" VerticalOptions="CenterAndExpand" TextColor="White"/>
 
-                            <Entry Text="{Binding ConfirmPassword}" 
+                                <Entry Text="{Binding ConfirmPassword}" 
                                    Placeholder="Confirm New Password" 
                                    PlaceholderColor="#b3add5" 
                                    TextColor="#b3add5"
@@ -113,28 +118,31 @@
                                    Margin="0,0,25,0" 
                                    HorizontalOptions="FillAndExpand"/>
 
-                        </StackLayout>
+                            </StackLayout>
 
-                    </Frame>
+                        </Frame>
 
-                    <Frame x:Name="SignupFrame" 
+                        <Frame x:Name="SignupFrame" 
                            CornerRadius="16"  
                            OutlineColor="#291a61" 
                            BackgroundColor="#f64d60"
                            Padding="0"
                            Margin="0,25,0,0">
-                        <Button BackgroundColor="Transparent" 
+                            <Button BackgroundColor="Transparent" 
                                 TextColor="White" 
                                 FontFamily="{StaticResource MediumFont}"
                                 Text="SIGN UP"
                                 FontSize="Large"                                
                                 Command="{Binding SignUpCommand}" CommandParameter="{x:Reference SignupFrame}"                              
                                 />
-                    </Frame>
+                        </Frame>
 
-                </StackLayout>
+                    </StackLayout>
 
-            </ScrollView>
+                </ScrollView>
+                
+            </yummy:PancakeView>
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

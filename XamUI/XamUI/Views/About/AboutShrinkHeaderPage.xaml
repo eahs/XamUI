@@ -10,7 +10,7 @@
 
             <Frame AbsoluteLayout.LayoutBounds="{Binding HeaderBounds}"
                    AbsoluteLayout.LayoutFlags="WidthProportional"
-                   BackgroundColor="Blue">
+                   BackgroundColor="{Binding HeaderBackgroundColor}">
 
                 <Image x:Name="MainHeaderImage"
                            Source="xamarin_logo.png"
@@ -32,7 +32,7 @@
                         <Label
                         HorizontalOptions="CenterAndExpand" 
                         Margin="0,8.7,0,0"
-                        Text="Version 1.0" />
+                        Text="{Binding AboutVersion}" />
                                 
                         <!--  Product title  -->
                         <Label
@@ -40,25 +40,16 @@
                         FontSize="Large"
                         HorizontalOptions="CenterAndExpand"
                         Margin="0,16,0,16"
-                        Text="Xamarin UI" />
+                        Text="{Binding AboutTitle}" />
 
                         <!--  Product description  -->
                         <Label
                         HorizontalOptions="Center"
                         HorizontalTextAlignment="Center"
                         FontFamily="{StaticResource SemiBoldFont}"                            
-                        Margin="15,0,15,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Cupcake ipsum dolor. Sit amet dessert donut jelly-o liquorice powder. " />
-                                        <Span Text="Cookie icing marzipan marshmallow ice cream. Liquorice dragée toffee " />
-                                        <Span Text="apple pie lollipop pie caramels. Bonbon chocolate bar sugar plum " />
-                                        <Span Text="chocolate bar cotton candy cotton candy pie marzipan." />
-                                </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+                        Margin="15,0,15,0"
+                        Text="{Binding AboutDescription}"/>
+
 
                         <Image Source="happyoffice.jpg"
                                Aspect="AspectFit"

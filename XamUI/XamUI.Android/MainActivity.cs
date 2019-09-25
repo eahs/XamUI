@@ -23,6 +23,7 @@ namespace XamUI.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             AiForms.Effects.Droid.Effects.Init(); //need to write here
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(false);
 
             LoadApplication(new App());
         }
