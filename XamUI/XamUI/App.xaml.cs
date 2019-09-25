@@ -1,4 +1,4 @@
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XamUI.Services;
 
 namespace XamUI
@@ -13,6 +13,9 @@ namespace XamUI
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
+
+        public static string BaseImageUrl { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
+
 
         protected override void OnStart()
         {
