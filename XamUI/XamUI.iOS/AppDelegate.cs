@@ -25,6 +25,8 @@ namespace XamUI.iOS
             global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init();
             AiForms.Effects.iOS.Effects.Init();  //need to write here
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+
 
             LoadApplication(new App());
 

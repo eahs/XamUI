@@ -6,6 +6,7 @@
        xmlns:font="clr-namespace:FontResources"
        mc:Ignorable="d"
        xmlns:local="clr-namespace:XamUI.Views"
+       xmlns:error="clr-namespace:XamUI.Views.Error"       
        Title="XamUI"
        x:Class="XamUI.AppShell"
        FlyoutBehavior="Flyout">
@@ -104,6 +105,44 @@
     </FlyoutItem>
     <FlyoutItem Title="Error Pages"
                 Icon="tab_error.png">
+        <Tab Title="Ecommerce">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.ShoppingCart }"
+                    Size="50"
+                    />
+            </Tab.Icon>
+            <ShellContent Title="EmptyCart" ContentTemplate="{DataTemplate error:EmptyCartPage}" />
+            <ShellContent Title="Payment" ContentTemplate="{DataTemplate error:PaymentFailedPage}" />
+            <ShellContent Title="Credits" ContentTemplate="{DataTemplate error:NoCreditsPage}" />
+
+        </Tab>
+        <Tab Title="General">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.Wifi }"
+                    Size="50"
+                    />
+            </Tab.Icon>
+            <ShellContent Title="Unknown" ContentTemplate="{DataTemplate error:SomethingWentWrongPage}" />
+            <ShellContent Title="Network" ContentTemplate="{DataTemplate error:NoInternetConnectionPage}" />
+            <ShellContent Title="Denied" ContentTemplate="{DataTemplate error:LocationDeniedPage}" />
+            <ShellContent Title="No Item" ContentTemplate="{DataTemplate error:NoItemPage}" />
+        </Tab>
+        <Tab Title="Media">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="{x:Static font:FontFileResources.LineAwesome}"
+                    Glyph="{x:Static font:LineAwesome.Photo }"
+                    Size="50"
+                    />
+            </Tab.Icon>
+            <ShellContent Title="No Photos" ContentTemplate="{DataTemplate error:NoPhotosPage}" />
+            <ShellContent Title="No Videos" ContentTemplate="{DataTemplate error:NoVideosPage}" />
+        </Tab>
+
 
     </FlyoutItem>
     <FlyoutItem Title="Onboarding"

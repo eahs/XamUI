@@ -35,7 +35,7 @@
 
     <OnPlatform x:Key="SemiBoldFont" x:TypeArguments="x:String">
         <OnPlatform.Platforms>
-            <On Platform="Android" Value="fonts/Montserrat-SemiBold.ttf#Montserrat-SemiBold" />
+            <On Platform="Android" Value="fonts/Montserrat-SemiBold.ttf#SemiBoldFont" />
             <On Platform="iOS" Value="Montserrat-SemiBold" />
         </OnPlatform.Platforms>
     </OnPlatform>
