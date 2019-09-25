@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FontResources
+﻿namespace FontResources
 {
     // Cheat sheet: https://icons8.com/line-awesome
     public static class LineAwesome

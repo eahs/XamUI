@@ -26,7 +26,7 @@ namespace FontResources
 
             var retString = resource.Platforms.Where(c => c.Platform.Contains(Device.RuntimePlatform))
                 .Select(c => c.Value).FirstOrDefault() as string;
-            
+
             return retString ?? "NOFONT";
         }
 

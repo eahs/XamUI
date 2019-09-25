@@ -1,8 +1,5 @@
-﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using XamUI.Services;
-using XamUI.Views;
 
 namespace XamUI
 {

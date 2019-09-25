@@ -3,7 +3,7 @@ using Xamarin.Forms.Internals;
 
 namespace XamUI.ViewModels.Login
 {
- 
+
     /// <summary>
     /// ViewModel for forgot password page.
     /// </summary>

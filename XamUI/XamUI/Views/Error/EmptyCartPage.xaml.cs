@@ -9,7 +9,7 @@ namespace XamUI.Views.Error
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EmptyCartPage 
+    public partial class EmptyCartPage
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EmptyCartPage" /> class.

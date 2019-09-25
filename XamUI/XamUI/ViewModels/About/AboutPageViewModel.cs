@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamUI.ViewModels.About
 {
@@ -11,7 +8,7 @@ namespace XamUI.ViewModels.About
         public Xamarin.Forms.Rectangle HeaderBounds { get; } = new Rectangle(0, 0, 1, 100);  // Only modify the last parameter (height)
         public Xamarin.Forms.Color HeaderBackgroundColor { get; set; } = Xamarin.Forms.Color.Blue;
 
-        public AboutPageViewModel ()
+        public AboutPageViewModel()
         {
         }
 

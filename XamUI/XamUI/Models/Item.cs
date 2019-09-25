@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace XamUI.Models
+﻿namespace XamUI.Models
 {
     public class Item
     {

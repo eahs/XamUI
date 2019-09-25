@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using XamUI.Models;
 
 namespace XamUI.ViewModels

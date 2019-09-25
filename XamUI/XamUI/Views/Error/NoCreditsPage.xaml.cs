@@ -9,7 +9,7 @@ namespace XamUI.Views.Error
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NoCreditsPage 
+    public partial class NoCreditsPage
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NoCreditsPage" /> class.
