@@ -11,7 +11,7 @@ namespace XamUI.ViewModels.ECommerce
     /// ViewModel for Checkout page.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class CheckoutPageViewModel : INotifyPropertyChanged
+    public class CheckoutPageViewModel : BaseViewModel
     {
         #region Fields
 
@@ -103,11 +103,6 @@ namespace XamUI.ViewModels.ECommerce
 
         #region Event
 
-        /// <summary>
-        /// The declaration of the property changed event.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         #endregion
 
         #region Public properties
@@ -127,7 +122,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.deliveryAddress = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -146,7 +141,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.paymentModes = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -165,7 +160,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.cartDetails = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -184,7 +179,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.totalPrice = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -203,7 +198,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.discountPrice = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -222,7 +217,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.discountPercent = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -259,14 +254,6 @@ namespace XamUI.ViewModels.ECommerce
 
         #region Methods
 
-        /// <summary>
-        /// The PropertyChanged event occurs when changing the value of property.
-        /// </summary>
-        /// <param name="propertyName">Property name</param>
-        public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Invoked when the Edit button is clicked.
@@ -301,10 +288,12 @@ namespace XamUI.ViewModels.ECommerce
         /// <param name="obj">The Object</param>
         private void PaymentOptionClicked(object obj)
         {
+            /*
             if (obj is RowDefinition rowDefinition && rowDefinition.Height.Value == 0)
             {
                 rowDefinition.Height = GridLength.Auto;
             }
+            */
         }
 
         /// <summary>

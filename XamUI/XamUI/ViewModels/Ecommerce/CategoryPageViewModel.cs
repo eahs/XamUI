@@ -1,11 +1,7 @@
-using Syncfusion.ListView.XForms;
-using Syncfusion.ListView.XForms.Control.Helpers;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamUI.Models.ECommerce;
@@ -17,7 +13,7 @@ namespace XamUI.ViewModels.ECommerce
     /// </summary>
     [Preserve(AllMembers = true)]
     [DataContract]
-    public class CategoryPageViewModel : INotifyPropertyChanged
+    public class CategoryPageViewModel : BaseViewModel
     {
         #region Fields
 
@@ -39,10 +35,6 @@ namespace XamUI.ViewModels.ECommerce
 
         #region Event
 
-        /// <summary>
-        /// The declaration of the property changed event.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
@@ -63,7 +55,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.categories = value;
-                this.NotifyPropertyChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -124,15 +116,6 @@ namespace XamUI.ViewModels.ECommerce
         #region Methods
 
         /// <summary>
-        /// The PropertyChanged event occurs when changing the value of property.
-        /// </summary>
-        /// <param name="propertyName">Property name</param>
-        public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Invoked when an item is selected.
         /// </summary>
         /// <param name="attachedObject">The Object</param>
@@ -147,6 +130,7 @@ namespace XamUI.ViewModels.ECommerce
         /// <param name="attachedObject">The Object</param>
         private void ScrollToStartClicked(object attachedObject)
         {
+            /*
             if (!(attachedObject is SfListView listView))
             {
                 return;
@@ -168,6 +152,7 @@ namespace XamUI.ViewModels.ECommerce
 
             listView.LayoutManager.ScrollToRowIndex(scrollToIndex, Syncfusion.ListView.XForms.ScrollToPosition.Center,
                 true);
+            */
         }
 
         /// <summary>
@@ -176,6 +161,7 @@ namespace XamUI.ViewModels.ECommerce
         /// <param name="attachedObject">The Object</param>
         private static void ScrollToEndClicked(object attachedObject)
         {
+            /*
             if (!(attachedObject is SfListView listView))
             {
                 return;
@@ -197,6 +183,7 @@ namespace XamUI.ViewModels.ECommerce
 
             listView.LayoutManager.ScrollToRowIndex(scrollToIndex, Syncfusion.ListView.XForms.ScrollToPosition.Center,
                 true);
+            */
         }
 
         /// <summary>
@@ -214,6 +201,7 @@ namespace XamUI.ViewModels.ECommerce
         /// <param name="obj">The Object</param>
         private void ExpanderClicked(object obj)
         {
+            /*
             var objects = obj as List<object>;
             var category = objects[0] as Category;
             var listView = objects[1] as SfListView;
@@ -232,6 +220,7 @@ namespace XamUI.ViewModels.ECommerce
                 listView.LayoutManager.ScrollToRowIndex(scrollIndex, Syncfusion.ListView.XForms.ScrollToPosition.End,
                     true);
             });
+            */
         }
 
         /// <summary>

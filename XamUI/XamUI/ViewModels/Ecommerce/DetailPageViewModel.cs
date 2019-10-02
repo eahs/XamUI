@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamUI.Models.ECommerce;
-using System.Linq;
 
 namespace XamUI.ViewModels.ECommerce
 {

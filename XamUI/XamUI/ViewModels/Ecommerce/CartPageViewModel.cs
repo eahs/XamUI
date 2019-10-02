@@ -1,10 +1,8 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XamUI.Models.ECommerce;
-using System.Runtime.Serialization;
 
 namespace XamUI.ViewModels.ECommerce
 {
@@ -13,7 +11,7 @@ namespace XamUI.ViewModels.ECommerce
     /// </summary>
     [Preserve(AllMembers = true)]
     [DataContract]
-    public class CartPageViewModel : INotifyPropertyChanged
+    public class CartPageViewModel : BaseViewModel
     {
         #region Fields
 
@@ -26,33 +24,29 @@ namespace XamUI.ViewModels.ECommerce
         private double discountPercent;
 
         private double percent;
-        
+
         private ObservableCollection<Product> produts;
-        
+
         private Command placeOrderCommand;
-        
+
         private Command notificationCommand;
-        
+
         private Command addToCartCommand;
-        
+
         private Command saveForLaterCommand;
-        
+
         private Command removeCommand;
-        
+
         private Command quantitySelectedCommand;
-        
+
         private Command variantSelectedCommand;
-        
+
         private Command applyCouponCommand;
 
         #endregion
 
         #region Event
 
-        /// <summary>
-        /// The declaration of the property changed event.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
@@ -76,7 +70,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.cartDetails = value;
-                this.NotifyPropertyChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -98,7 +92,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.totalPrice = value;
-                this.NotifyPropertyChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -120,7 +114,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.discountPrice = value;
-                this.NotifyPropertyChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -133,7 +127,7 @@ namespace XamUI.ViewModels.ECommerce
             {
                 return this.discountPercent;
             }
-        
+
             set
             {
                 if (this.discountPercent == value)
@@ -142,7 +136,7 @@ namespace XamUI.ViewModels.ECommerce
                 }
 
                 this.discountPercent = value;
-                this.NotifyPropertyChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -164,7 +158,7 @@ namespace XamUI.ViewModels.ECommerce
                     return;
                 }
                 this.produts = value;
-                this.NotifyPropertyChanged();
+                OnPropertyChanged();
                 GetProducts(Products);
                 UpdatePrice();
             }
@@ -242,14 +236,6 @@ namespace XamUI.ViewModels.ECommerce
 
         #region Methods
 
-        /// <summary>
-        /// The PropertyChanged event occurs when changing the value of property.
-        /// </summary>
-        /// <param name="propertyName">Property name</param>
-        public void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Invoked when an item is selected.

@@ -1,5 +1,4 @@
 ﻿using Xamarin.Forms;
-using XamUI.Services;
 
 namespace XamUI
 {
@@ -10,7 +9,6 @@ namespace XamUI
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
